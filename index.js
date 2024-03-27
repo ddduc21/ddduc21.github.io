@@ -41,6 +41,10 @@ video.onplay = function (e) {
   draw();
 };
 
+video.ondurationchange = function (e) {
+  draw()
+};
+
 threshold.oninput = function (e) {
     const value = document.getElementById("threshold-value");
     value.innerHTML = threshold.value;
