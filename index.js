@@ -42,7 +42,9 @@ video.onplay = function (e) {
 };
 
 video.ondurationchange = function (e) {
-  draw()
+  if (video.paused || video.ended) {
+    draw();
+  }
 };
 
 threshold.oninput = function (e) {
