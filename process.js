@@ -22,16 +22,16 @@ function process(image, threshold) {
   ]);
 
   for (let i = 0; i < size; i++) {
-    const g = Math.sqrt(
-      gradient_x[i] * gradient_x[i] + gradient_y[i] * gradient_y[i]
-    );
-
+		const g = Math.sqrt(
+			gradient_x[i] * gradient_x[i] + gradient_y[i] * gradient_y[i]
+		);
+	
 		const color = sigmoid(g, threshold);
 		// const color = step(g, threshold);
-
-    image.data[i * 4] 		= color;
-    image.data[i * 4 + 1] = color;
-    image.data[i * 4 + 2] = color;
+	
+		image.data[i * 4]     = color;
+	  image.data[i * 4 + 1] = color;
+	  image.data[i * 4 + 2] = color;
 		image.data[i * 4 + 3] = 255;
 
     // image.data[i * 4] 		= g;
